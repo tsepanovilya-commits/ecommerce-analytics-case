@@ -18,9 +18,10 @@
 | 6 | Декор — самая маржинальная категория | Маржа 55,5% против 35% у Освещения | Использовать Декор в допродажах и промо |
 
 ## Графики
-![Выручка](output/revenue_monthly.png)
-![Когорты](output/cohorts.png)
-![Повторные заказы по каналам](output/channel_repeat.png)
+![Выручка](output/revenue_monthly.svg)
+![Повторные заказы по каналам](output/channel_repeat.svg)
+
+Когортная таблица: `output/02_cohort_retention.csv` (генерируется `src/analyze.py`).
 
 ## Структура
 ```
@@ -28,7 +29,7 @@ src/generate_data.py   генерация данных (seed=42, воспрои�
 src/analyze.py         SQL → CSV, графики, A/B-тест
 sql/01..05_*.sql       запросы: KPI, когорты, аномалии (оконные функции), RFM, маржа
 data/                  создаётся генератором (в репозиторий не входит)
-output/                результаты запросов, графики, ab_test.csv
+output/                ключевые результаты и графики; полный набор генерирует src/analyze.py
 ```
 Запуск: `pip install -r requirements.txt` → `python src/generate_data.py` → `python src/analyze.py`.
 
